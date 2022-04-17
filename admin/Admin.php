@@ -290,9 +290,19 @@ class Admin extends Database
     $id_spp = htmlspecialchars($data['id_spp']);
     $jumlah_dibayar = htmlspecialchars($data['jumlah_dibayar']);
 
-    mysqli_query($conn, "INSERT INTO pembayaran VALUES ('', '$id_petugas','$nisn','$tgl_bayar','$bulan_dibayar','$tahun_dibayar', '$id_spp', '$jumlah_dibayar')");
+    if ($bulan_dibayar == "_") {
+      echo
+      "<script>
+        alert('PILIH BULAN TERLEBIH DAHULU!');
+        window.location.href='?p=entri-bayar1'
+      </script>";
+      exit;
+    } else {
 
-    return mysqli_affected_rows($conn);
+      mysqli_query($conn, "INSERT INTO pembayaran VALUES ('', '$id_petugas','$nisn','$tgl_bayar','$bulan_dibayar','$tahun_dibayar', '$id_spp', '$jumlah_dibayar')");
+
+      return mysqli_affected_rows($conn);
+    }
   }
 
   public function getPembayaranByNisn($nisn)

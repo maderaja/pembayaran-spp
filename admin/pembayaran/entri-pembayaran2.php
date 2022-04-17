@@ -36,7 +36,7 @@ if (!isset($siswa["nisn"])) {
   <h1 class="h3 mb-2 text-gray-800">Form Entri Pembayaran SPP</h1>
   <hr>
 
-  <div class="card mb-4 py-3 border-left-success">
+  <div class="card shadow mb-4 py-3 border-left-success">
     <div class="card-body">
       <?php foreach ($bulan as $bln) : ?>
         <label class="btn btn-<?= (in_array($bln, $bulan_dibayar) ? "success" : "danger") ?>"><?= $bln ?></label>
@@ -66,7 +66,7 @@ if (!isset($siswa["nisn"])) {
           <div class="form-group">
             <label for="bulan_dibayar">Bulan Dibayar</label>
             <select name="bulan_dibayar" id="bulan_dibayar" class="form-control">
-              <option value="">=== Bulan ===</option>
+              <option value="_">=== Bulan ===</option>
               <?php foreach ($bulan as $bln) : ?>
                 <option value="<?= $bln ?>" class="<?= (in_array($bln, $bulan_dibayar) ? "d-none" : "") ?>"><?= $bln ?></option>
               <?php endforeach; ?>
@@ -74,7 +74,7 @@ if (!isset($siswa["nisn"])) {
           </div>
           <div class="form-group">
             <label for="tahun_dibayar">Tahun Dibayar</label>
-            <input type="text" name="tahun_dibayar" id="tahun_dibayar" value="<?php echo date("Y"); ?>" class="form-control" autocomplete="off">
+            <input type="text" name="tahun_dibayar" id="tahun_dibayar" readonly value="<?php echo date("Y"); ?>" class="form-control" autocomplete="off">
           </div>
           <div class="form-group">
             <label for="id_spp">ID SPP</label>

@@ -13,7 +13,7 @@ $siswa = $admin->getAllSiswa();
   <h1 class="h3 mb-2 text-gray-800">Form Entri Pembayaran SPP</h1>
   <hr>
 
-  <div class="card mb-4 py-3 border-left-success">
+  <div class="card mb-4 shadow py-3 border-left-success">
     <div class="card-body">
       <form action="" method="post" class="form">
         <div class="form-group">
