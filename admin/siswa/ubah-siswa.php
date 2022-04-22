@@ -73,7 +73,7 @@ $spp = $admin->getAllSpp();
 
         <div class="form-group">
           <label for="id_spp">ID SPP :</label>
-          <select class="form-control" name="id_spp" required disabled>
+          <select class="form-control" name="id_spp" required>
             <?php
             foreach ($spp as $spp) :
             ?>

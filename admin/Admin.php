@@ -112,7 +112,7 @@ class Admin extends Database
     if ($cek) {
       echo
       "<script>
-        alert('Data UDAH ADA SATT!');
+        alert('Username Petugas Sudah Terdaftar!');
         window.location.href='?p=data-petugas'
       </script>";
       exit;
